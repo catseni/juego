@@ -19,7 +19,7 @@ public class Jugador : MonoBehaviour
     {
         if(Input.GetKeyDown("space") && ContactoPiso)
         {
-            print("space key was pressed");
+            ContactoPiso = false;
             this.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, FuerzaSalto));
         }
 
@@ -28,17 +28,13 @@ public class Jugador : MonoBehaviour
             );
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         ContactoPiso = true;
-        if(collision.tag == "Obstaculo")
+        if(other.collider.gameObject.tag == "Obstaculo")
         {
             GameObject.Destroy(this.gameObject);
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        ContactoPiso = false;
-    }
 }

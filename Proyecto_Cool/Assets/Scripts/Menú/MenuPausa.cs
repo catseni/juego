@@ -9,6 +9,10 @@ public class MenuPausa : MonoBehaviour
     [SerializeField] private GameObject menuPausa;
     private bool teclaPausa = false;
 
+    void Start() {
+        Time.timeScale = 1f;
+    }
+
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))

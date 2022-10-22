@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Obstaculo
+  - Opciones
   layers:
   - Default
   - TransparentFX
@@ -41,4 +42,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Fondo
+    uniqueID: 3567886283
+    locked: 0
+  - name: Personaje
+    uniqueID: 1653168605
+    locked: 0
+  - name: Obstaculo
+    uniqueID: 171286439
+    locked: 0
+  - name: Plataforma
+    uniqueID: 3727572325
     locked: 0

@@ -6,11 +6,12 @@ TagManager:
   tags:
   - Obstaculo
   - Opciones
+  - PuntoFinal
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Suelo
   - Water
   - UI
   - 

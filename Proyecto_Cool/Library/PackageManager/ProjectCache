@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638016574311009223
-    m_Hash: 3099747595
+      ticks: 638033954723708362
+    m_Hash: 91980576
   m_LockFileStatus:
     m_FilePath: E:/SODVI/juego/Proyecto_Cool/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638016575075608256
-    m_Hash: 775018272
+      ticks: 638033954724506230
+    m_Hash: 3117215124
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -36,7 +36,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 2D
-  type: 
+  type: asset
   description: 2D Animation provides all the necessary tooling and runtime components
     for skeletal animation using Sprites.
   status: 4
@@ -140,9 +140,12 @@ m_ResolvedPackages:
     - 8.0.2
     - 8.0.3
     - 8.0.4
+    - 8.0.5
     - 9.0.0-pre.1
     - 9.0.0-pre.3
     - 9.0.0
+    - 9.0.1
+    - 10.0.0-pre.1
     compatible:
     - 7.0.7
     - 7.0.8
@@ -187,7 +190,7 @@ m_ResolvedPackages:
     scopes: []
     isDefault: 1
     capabilities: 7
-  hideInEditor: 1
+  hideInEditor: 0
   isAssetStorePackage: 0
   datePublishedTicks: 637958913350000000
   documentationUrl: 
@@ -245,10 +248,12 @@ m_ResolvedPackages:
     - 5.0.0
     - 5.0.1
     - 5.0.2
+    - 5.0.3
     compatible:
     - 5.0.1
     - 5.0.2
-    verified: 5.0.2
+    - 5.0.3
+    verified: 5.0.3
   dependencies: []
   resolvedDependencies: []
   keywords:
@@ -290,7 +295,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 2D
-  type: 
+  type: asset
   description: A ScriptedImporter for importing Adobe Photoshop PSB (Photoshop Big)
     file format. The ScriptedImporter is currently targeted for users who wants to
     create multi Sprite character animation using Unity 2D Animation Package.
@@ -363,6 +368,8 @@ m_ResolvedPackages:
     - 8.0.0-pre.1
     - 8.0.0-pre.3
     - 8.0.0
+    - 8.0.1
+    - 9.0.0-pre.1
     compatible:
     - 6.0.5
     - 6.0.6
@@ -408,7 +415,7 @@ m_ResolvedPackages:
     scopes: []
     isDefault: 1
     capabilities: 7
-  hideInEditor: 1
+  hideInEditor: 0
   isAssetStorePackage: 0
   datePublishedTicks: 637958913380000000
   documentationUrl: 
@@ -486,7 +493,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 2D
-  type: 
+  type: asset
   description: SpriteShape Runtime & Editor Package contains the tooling and the
     runtime component that allows you to create very organic looking spline based
     2D worlds. It comes with intuitive configurator and a highly performant renderer.
@@ -568,6 +575,8 @@ m_ResolvedPackages:
     - 8.0.1
     - 9.0.0-pre.1
     - 9.0.0
+    - 9.0.1
+    - 10.0.0-pre.1
     compatible:
     - 7.0.6
     verified: 7.0.6
@@ -617,7 +626,7 @@ m_ResolvedPackages:
     scopes: []
     isDefault: 1
     capabilities: 7
-  hideInEditor: 1
+  hideInEditor: 0
   isAssetStorePackage: 0
   datePublishedTicks: 637958913420000000
   documentationUrl: 
@@ -680,12 +689,12 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 1.0.0
     nextVersion: 
-- packageId: com.unity.cinemachine@2.8.6
+- packageId: com.unity.cinemachine@2.9.2
   testable: 0
   isDirectDependency: 1
-  version: 2.8.6
+  version: 2.9.2
   source: 1
-  resolvedPath: E:\SODVI\juego\Proyecto_Cool\Library\PackageCache\com.unity.cinemachine@2.8.6
+  resolvedPath: E:\SODVI\juego\Proyecto_Cool\Library\PackageCache\com.unity.cinemachine@2.9.2
   assetPath: Packages/com.unity.cinemachine
   name: com.unity.cinemachine
   displayName: Cinemachine
@@ -694,7 +703,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: cinematography
-  type: 
+  type: asset
   description: "Smart camera tools for passionate creators. \n\nNew starting from
     2.7.1: Are you looking for the Cinemachine menu? It has moved to the GameObject
     menu.\n\nIMPORTANT NOTE: If you are upgrading from the legacy Asset Store version
@@ -765,15 +774,28 @@ m_ResolvedPackages:
     - 2.9.0-pre.1
     - 2.9.0-pre.6
     - 2.9.1
+    - 2.9.2
+    - 3.0.0-pre.3
     compatible:
     - 2.8.6
     - 2.8.9
     - 2.9.0-pre.1
     - 2.9.0-pre.6
     - 2.9.1
+    - 2.9.2
     verified: 2.8.9
-  dependencies: []
-  resolvedDependencies: []
+  dependencies:
+  - name: com.unity.test-framework
+    version: 1.1.31
+  resolvedDependencies:
+  - name: com.unity.test-framework
+    version: 1.1.31
+  - name: com.unity.ext.nunit
+    version: 1.0.6
+  - name: com.unity.modules.imgui
+    version: 1.0.0
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
   keywords:
   - camera
   - follow
@@ -804,15 +826,15 @@ m_ResolvedPackages:
     scopes: []
     isDefault: 1
     capabilities: 7
-  hideInEditor: 1
+  hideInEditor: 0
   isAssetStorePackage: 0
-  datePublishedTicks: 637891007790000000
+  datePublishedTicks: 638019527120000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
     url: https://github.com/Unity-Technologies/com.unity.cinemachine.git
-    revision: 5e26d3cd08865a98219c0d2d3a8cc689018dd75b
+    revision: 2cf333415b8b110b132992a53dbb9e64e0436b89
     path: 
   unityLifecycle:
     version: 2.8.6
@@ -1238,12 +1260,14 @@ m_ResolvedPackages:
     - 1.1.30
     - 1.1.31
     - 1.1.33
+    - 1.3.0
     - 2.0.1-exp.1
     - 2.0.1-pre.12
     - 2.0.1-pre.18
     compatible:
     - 1.1.31
     - 1.1.33
+    - 1.3.0
     - 2.0.1-exp.1
     - 2.0.1-pre.12
     - 2.0.1-pre.18
@@ -1543,12 +1567,14 @@ m_ResolvedPackages:
     - 1.7.0-pre.2
     - 1.7.0
     - 1.7.1
+    - 1.7.2
     compatible:
     - 1.6.4
     - 1.7.0-pre.1
     - 1.7.0-pre.2
     - 1.7.0
     - 1.7.1
+    - 1.7.2
     verified: 1.6.4
   dependencies:
   - name: com.unity.modules.director
@@ -3470,7 +3496,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: 
+  type: asset
   description: 'This package defines common components used by multiple Game Service
     packages.
 
@@ -3495,9 +3521,13 @@ m_ResolvedPackages:
     - 1.4.1
     - 1.4.2
     - 1.4.3
+    - 1.5.2
+    - 1.6.0
     compatible:
     - 1.4.2
     - 1.4.3
+    - 1.5.2
+    - 1.6.0
     verified: 1.4.3
   dependencies:
   - name: com.unity.modules.unitywebrequest
@@ -3521,7 +3551,7 @@ m_ResolvedPackages:
     scopes: []
     isDefault: 1
     capabilities: 7
-  hideInEditor: 1
+  hideInEditor: 0
   isAssetStorePackage: 0
   datePublishedTicks: 637919618520000000
   documentationUrl: 
@@ -3613,7 +3643,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 2D
-  type: 
+  type: asset
   description: 2D Common is a package that contains shared functionalities that are
     used by most of the other 2D packages.
   status: 4
@@ -3659,9 +3689,12 @@ m_ResolvedPackages:
     - 7.0.0
     - 7.0.1
     - 7.0.2
+    - 7.0.3
     - 8.0.0-pre.1
     - 8.0.0-pre.2
     - 8.0.0
+    - 8.0.1
+    - 9.0.0-pre.1
     compatible:
     - 6.0.4
     - 6.0.5
@@ -3701,7 +3734,7 @@ m_ResolvedPackages:
     scopes: []
     isDefault: 1
     capabilities: 7
-  hideInEditor: 1
+  hideInEditor: 0
   isAssetStorePackage: 0
   datePublishedTicks: 637958913310000000
   documentationUrl: 
@@ -3813,6 +3846,18 @@ m_ResolvedPackages:
   errors: []
   versions:
     all:
+    - 1.0.0-preview.2
+    - 1.0.0-preview.3
+    - 1.0.0-preview.4
+    - 1.0.1-preview.1
+    - 1.1.2
+    - 2.0.0-preview
+    - 2.0.0-preview.1
+    - 2.0.0-preview.2
+    - 2.0.0
+    - 2.0.1-preview.1
+    - 2.0.2
+    - 3.0.1
     - 3.0.2
     compatible:
     - 3.0.2
@@ -3829,7 +3874,7 @@ m_ResolvedPackages:
     capabilities: 7
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 0
+  datePublishedTicks: 637846828220000000
   documentationUrl: 
   hasRepository: 1
   repository:
@@ -3978,6 +4023,7 @@ m_ResolvedPackages:
     - 1.8.0-pre.1
     - 1.8.0-pre.2
     - 1.8.0
+    - 1.8.1
     compatible:
     - 1.6.6
     - 1.7.0-pre.1
@@ -3989,6 +4035,7 @@ m_ResolvedPackages:
     - 1.8.0-pre.1
     - 1.8.0-pre.2
     - 1.8.0
+    - 1.8.1
     verified: 1.6.6
   dependencies:
   - name: com.unity.mathematics

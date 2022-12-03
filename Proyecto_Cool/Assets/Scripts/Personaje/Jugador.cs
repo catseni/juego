@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -37,6 +38,8 @@ public class Jugador : MonoBehaviour
     
     [Header("Animacion")]
     private Animator animador;
+
+    public event EventHandler FinJuego;
 
     void Start()
     {
@@ -150,6 +153,7 @@ public class Jugador : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Obstaculo"){
+            FinJuego?.Invoke(this, EventArgs.Empty);
             GameObject.Destroy(this.gameObject);
         }
     }

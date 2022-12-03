@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+
 
 public class ControladorNivel : MonoBehaviour
 {
@@ -10,9 +12,11 @@ public class ControladorNivel : MonoBehaviour
     [SerializeField] private float distanciaMinima;
     [SerializeField] private Transform final;
     [SerializeField] private int cantidadInicial;
+    [SerializeField] private GameObject menuGaOv;
     private Transform jugador;
     public Text TextoDeJuego;
     public bool Perdiste;
+    //public event EventHandler FinJuego;
 
     void Start()
     {
@@ -41,6 +45,7 @@ public class ControladorNivel : MonoBehaviour
             {
                 Perdiste = true;
                 TextoDeJuego.text += "\nGame Over!\nPulsa R para volver a empezar.";
+                //FinJuego?.Invoke(this, EventArgs.Empty);
             }
 
             if(Perdiste)
@@ -55,7 +60,7 @@ public class ControladorNivel : MonoBehaviour
 
     private void GenerarParteNivel()
     {
-        int numAleatorio = Random.Range(0, SeccionesNivel.Length);
+        int numAleatorio = UnityEngine.Random.Range(0, SeccionesNivel.Length);
         GameObject nivel = Instantiate(SeccionesNivel[numAleatorio], final.position, Quaternion.identity);
         final = BuscarPuntoFinal(nivel, "PuntoFinal");
     }

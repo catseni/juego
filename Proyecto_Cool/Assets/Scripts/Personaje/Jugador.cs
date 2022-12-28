@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -41,11 +42,14 @@ public class Jugador : MonoBehaviour
 
     public event EventHandler FinJuego;
 
+    public float timer = 0;
+
     void Start()
     {
         rigidBody2D = GetComponent<Rigidbody2D>();
         animador = GetComponent<Animator>();
         escalarGravedad = rigidBody2D.gravityScale;
+        
     }
 
     void Update()
@@ -70,7 +74,7 @@ public class Jugador : MonoBehaviour
         contactoSuelo = Physics2D.OverlapBox(controladorSuelo.position, dimensionesCaja, 0, Suelo);
         animador.SetBool("contactoSuelo", contactoSuelo);
 
-         if(input.y < 0){
+        if(input.y < 0){
             agachar = true;
         }else{
             agachar = false;
@@ -79,7 +83,7 @@ public class Jugador : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (saltar && botonSaltoArriba && contactoSuelo)
+        if (saltar && botonSaltoArriba && contactoSuelo && (agachado == false))
         {
             Saltar();
         }
@@ -95,7 +99,10 @@ public class Jugador : MonoBehaviour
 
         animador.SetBool("contactoSuelo", contactoSuelo);
         animador.SetBool("Agachar", agachado);
-        Mover(agachar);
+
+        if(contactoSuelo == true){
+            Mover(agachar);
+        }
 
         saltar = false;
     }

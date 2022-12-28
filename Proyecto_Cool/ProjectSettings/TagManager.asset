@@ -7,6 +7,7 @@ TagManager:
   - Obstaculo
   - Opciones
   - PuntoFinal
+  - PowerUP
   layers:
   - Default
   - TransparentFX

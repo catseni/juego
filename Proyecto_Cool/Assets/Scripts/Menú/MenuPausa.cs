@@ -5,12 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class MenuPausa : MonoBehaviour
 {
-    [SerializeField] private GameObject botonPausa;
-    [SerializeField] private GameObject menuPausa;
-    private bool teclaPausa = false;
+    [SerializeField] public GameObject botonPausa;
+    [SerializeField] public GameObject menuPausa;
+    [SerializeField] public GameObject menuOpciones;
+    public bool teclaPausa = false;
+    public Transform jugador;
 
     void Start() {
         Time.timeScale = 1f;
+        jugador = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void Update()
@@ -18,9 +21,16 @@ public class MenuPausa : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             if(teclaPausa){
-                Reanudar();
+                if(menuOpciones.activeInHierarchy){
+                    menuOpciones.SetActive(false);
+                    Pausa();
+                }else{
+                    Reanudar();
+                }
             }else{
-                Pausa();
+                if(jugador != null){
+                    Pausa();
+                }
             }
         }
     }

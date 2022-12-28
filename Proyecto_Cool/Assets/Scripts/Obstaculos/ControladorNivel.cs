@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-
 public class ControladorNivel : MonoBehaviour
 {
     [SerializeField] private GameObject[] SeccionesNivel;
@@ -16,7 +15,17 @@ public class ControladorNivel : MonoBehaviour
     private Transform jugador;
     public Text TextoDeJuego;
     public bool Perdiste;
+    public int numAleatorio = 0;
     //public event EventHandler FinJuego;
+
+    public bool Inicio = true;
+    
+    public bool Dificultad_Facil = false;
+    public bool Dificultad_Medio = false;
+    public bool Dificultad_Dificil = false;
+
+    [SerializeField] public GameObject GameOver;
+    [SerializeField] public MenuPausa referenciaP;
 
     void Start()
     {
@@ -25,7 +34,13 @@ public class ControladorNivel : MonoBehaviour
 
         for(int i = 0; i < cantidadInicial ; i++)
         {
-            GenerarParteNivel();
+            if(Inicio == true){
+                GenerarParteNivel(true);
+                Inicio = false;
+            }
+            else{
+                GenerarParteNivel(false);
+            }
         }
     }
 
@@ -35,9 +50,19 @@ public class ControladorNivel : MonoBehaviour
         {
             if(Vector2.Distance(jugador.position, final.position) < distanciaMinima)
             {
-                GenerarParteNivel();
+                GenerarParteNivel(false);
             }
             TextoDeJuego.text = "Puntaje: " + Mathf.Floor(jugador.transform.position.x);
+            
+            if(Mathf.Floor(jugador.transform.position.x) == 150){
+                Dificultad_Facil = false;
+                Dificultad_Medio = true;
+            }
+            if(Mathf.Floor(jugador.transform.position.x) == 250){
+                Dificultad_Medio = false;
+                Dificultad_Dificil = true;
+            }
+            
         }
         else
         {
@@ -45,11 +70,14 @@ public class ControladorNivel : MonoBehaviour
             {
                 Perdiste = true;
                 TextoDeJuego.text += "\nGame Over!\nPulsa R para volver a empezar.";
-                //FinJuego?.Invoke(this, EventArgs.Empty);
             }
 
             if(Perdiste)
             {
+                referenciaP.botonPausa.SetActive(false);
+                referenciaP.menuPausa.SetActive(false);
+                referenciaP.teclaPausa = false;
+
                 if(Input.GetKeyDown("r"))
                 {
                     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -58,9 +86,30 @@ public class ControladorNivel : MonoBehaviour
         }
     }
 
-    private void GenerarParteNivel()
+    private void GenerarParteNivel(bool inicio)
     {
-        int numAleatorio = UnityEngine.Random.Range(0, SeccionesNivel.Length);
+        int a = 0;
+        int b = SeccionesNivel.Length;
+
+        if(inicio == true){
+            a = 0;
+            b = 2;
+            Dificultad_Facil = true;
+        }
+        else if(Dificultad_Facil == true){
+            a = 2;
+            b = 6;
+        }
+        else if(Dificultad_Medio == true){
+            a = 6;
+            b = 10;
+        }
+        else if(Dificultad_Dificil == true){
+            a = 10;
+        }
+
+        numAleatorio = UnityEngine.Random.Range(a, b);
+
         GameObject nivel = Instantiate(SeccionesNivel[numAleatorio], final.position, Quaternion.identity);
         final = BuscarPuntoFinal(nivel, "PuntoFinal");
     }
@@ -80,4 +129,5 @@ public class ControladorNivel : MonoBehaviour
 
         return punto;
     }
+
 }

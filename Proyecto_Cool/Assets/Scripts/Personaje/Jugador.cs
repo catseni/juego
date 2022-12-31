@@ -3,11 +3,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Jugador : MonoBehaviour
 {
     [Header("Referencias")]
     private Rigidbody2D rigidBody2D;
+    public AudioSource MusicaFondo;
+    public AudioSource Aparecer;
 
     [Header("Movimiento")]
     private float movimientoHorizontal = 0f;
@@ -19,6 +22,7 @@ public class Jugador : MonoBehaviour
     [SerializeField] private Transform controladorSuelo;
     [SerializeField] private Vector2 dimensionesCaja;
     [SerializeField] private LayerMask Suelo;
+    public AudioSource SonidoSalto;
 
     private bool contactoSuelo;
     private bool saltar;
@@ -34,6 +38,7 @@ public class Jugador : MonoBehaviour
     [SerializeField] private float radioTecho;
     [SerializeField] private float multVelocidadAgachado;
     [SerializeField] private Collider2D colisionadorAgachado;
+    public AudioSource SonidoAgachado;
     private bool agachado = false;
     private bool agachar = false;
     
@@ -42,7 +47,14 @@ public class Jugador : MonoBehaviour
 
     public event EventHandler FinJuego;
 
-    public float timer = 0;
+    [Header("PowerUp")]
+    [SerializeField] public bool PowerUp = false;
+    public AudioSource SonidoPW;
+    public AudioSource MusicaPW;
+
+    public float timer;
+    public float inicioPW, finPW;
+    public bool contadorPW = false;
 
     void Start()
     {
@@ -54,6 +66,7 @@ public class Jugador : MonoBehaviour
 
     void Update()
     {
+        timer += Time.deltaTime;
         input.x = Input.GetAxisRaw("Horizontal");
         input.y = Input.GetAxisRaw("Vertical");
 
@@ -79,12 +92,21 @@ public class Jugador : MonoBehaviour
         }else{
             agachar = false;
         }
+
+        if( (timer >= finPW) && (contadorPW == true) ){
+            SonidoPW.Stop();
+            PowerUp = false;
+            contadorPW = false;
+            MusicaPW.Stop();
+            MusicaFondo.Play();
+        }
     }
 
     private void FixedUpdate()
     {
         if (saltar && botonSaltoArriba && contactoSuelo && (agachado == false))
         {
+            SonidoSalto.Play();
             Saltar();
         }
 
@@ -108,7 +130,7 @@ public class Jugador : MonoBehaviour
     }
 
     public void Mover(bool agachar){
-
+        
         if(!agachar){
             if(Physics2D.OverlapCircle(controladorTecho.position, radioTecho, Suelo)){
                 agachar = true;
@@ -118,17 +140,18 @@ public class Jugador : MonoBehaviour
         if(agachar){
             if(!agachado){
                 agachado = true;
+                SonidoAgachado.Play();
             }
             //mover *= multVelocidadAgachado;
             colisionadorAgachado.enabled = false;
         }else{
             colisionadorAgachado.enabled = true;
-
             if(agachado)
             {
                 agachado = false;
             }
         }
+        
     }
 
     public void Saltar()
@@ -150,6 +173,18 @@ public class Jugador : MonoBehaviour
         saltar = false;
     }
 
+    public void ActivatePowerUP()
+    {
+        MusicaFondo.Stop();
+        SonidoPW.Play();
+        MusicaPW.Play();
+        inicioPW = timer;
+        finPW = timer + 7;
+        contadorPW = true;
+        PowerUp = true;
+    }
+
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
@@ -160,8 +195,11 @@ public class Jugador : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Obstaculo"){
-            FinJuego?.Invoke(this, EventArgs.Empty);
-            GameObject.Destroy(this.gameObject);
+            if(PowerUp == false){
+                MusicaFondo.Stop();
+                FinJuego?.Invoke(this, EventArgs.Empty);
+                GameObject.Destroy(this.gameObject);
+            }
         }
     }
 }

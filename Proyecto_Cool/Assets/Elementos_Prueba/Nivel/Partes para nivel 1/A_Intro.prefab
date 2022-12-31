@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8786951386017417330}
   - component: {fileID: 5736780109448251807}
   - component: {fileID: 1700403762248754415}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fondo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -354,8 +354,8 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -727081013
-  m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingLayer: -1
+  m_SortingOrder: 2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -1140,7 +1140,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -567394971
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -1266,7 +1266,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5262481217053291195}
   - component: {fileID: 1465538052933076331}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Nivel
   m_TagString: Untagged
   m_Icon: {fileID: 0}

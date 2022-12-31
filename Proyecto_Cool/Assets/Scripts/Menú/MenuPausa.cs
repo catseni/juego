@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class MenuPausa : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class MenuPausa : MonoBehaviour
     [SerializeField] public GameObject menuOpciones;
     public bool teclaPausa = false;
     public Transform jugador;
+    public AudioSource clip;
 
     void Start() {
         Time.timeScale = 1f;
@@ -20,6 +22,7 @@ public class MenuPausa : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
+            clip.Play();
             if(teclaPausa){
                 if(menuOpciones.activeInHierarchy){
                     menuOpciones.SetActive(false);

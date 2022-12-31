@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class ControladorNivel : MonoBehaviour
 {
@@ -12,10 +13,13 @@ public class ControladorNivel : MonoBehaviour
     [SerializeField] private Transform final;
     [SerializeField] private int cantidadInicial;
     [SerializeField] private GameObject menuGaOv;
+    public AudioSource PlayerDestroy;
     private Transform jugador;
     public Text TextoDeJuego;
     public bool Perdiste;
     public int numAleatorio = 0;
+    public int numAleatorioPW = 0;
+    public int probabilidadPW = 5;
     //public event EventHandler FinJuego;
 
     public bool Inicio = true;
@@ -52,7 +56,7 @@ public class ControladorNivel : MonoBehaviour
             {
                 GenerarParteNivel(false);
             }
-            TextoDeJuego.text = "Puntaje: " + Mathf.Floor(jugador.transform.position.x);
+            TextoDeJuego.text = "Distancia: " + Mathf.Floor(jugador.transform.position.x);
             
             if(Mathf.Floor(jugador.transform.position.x) == 150){
                 Dificultad_Facil = false;
@@ -69,6 +73,7 @@ public class ControladorNivel : MonoBehaviour
             if(!Perdiste)
             {
                 Perdiste = true;
+                PlayerDestroy.Play();
                 TextoDeJuego.text += "\nGame Over!\nPulsa R para volver a empezar.";
             }
 
@@ -106,12 +111,32 @@ public class ControladorNivel : MonoBehaviour
         }
         else if(Dificultad_Dificil == true){
             a = 10;
+            b = 14;
+            probabilidadPW = 10;
         }
 
         numAleatorio = UnityEngine.Random.Range(a, b);
+        numAleatorioPW = UnityEngine.Random.Range(0, probabilidadPW);
 
-        GameObject nivel = Instantiate(SeccionesNivel[numAleatorio], final.position, Quaternion.identity);
-        final = BuscarPuntoFinal(nivel, "PuntoFinal");
+        if( (numAleatorioPW == 2) && (Inicio == false) )
+        {
+            if(Dificultad_Facil == true){
+                numAleatorio = 14;
+            }else if(Dificultad_Medio == true){
+                numAleatorio = 15;
+            }else if(Dificultad_Dificil == true){
+                numAleatorio = 16;
+            }else{
+                numAleatorio = 14;
+            }
+            GameObject nivel = Instantiate(SeccionesNivel[numAleatorio], final.position, Quaternion.identity);
+            final = BuscarPuntoFinal(nivel, "PuntoFinal");
+        }
+        else
+        {
+            GameObject nivel = Instantiate(SeccionesNivel[numAleatorio], final.position, Quaternion.identity);
+            final = BuscarPuntoFinal(nivel, "PuntoFinal");
+        }
     }
 
     private Transform BuscarPuntoFinal(GameObject parteNivel, string etiqueta)

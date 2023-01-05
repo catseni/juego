@@ -2,25 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class MenuPausa : MonoBehaviour
 {
-    [SerializeField] private GameObject botonPausa;
-    [SerializeField] private GameObject menuPausa;
-    private bool teclaPausa = false;
+    [SerializeField] public GameObject botonPausa;
+    [SerializeField] public GameObject menuPausa;
+    [SerializeField] public GameObject menuOpciones;
+    public bool teclaPausa = false;
+    public Transform jugador;
+    public AudioSource clip;
 
     void Start() {
         Time.timeScale = 1f;
+        jugador = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
+            clip.Play();
             if(teclaPausa){
-                Reanudar();
+                if(menuOpciones.activeInHierarchy){
+                    menuOpciones.SetActive(false);
+                    Pausa();
+                }else{
+                    Reanudar();
+                }
             }else{
-                Pausa();
+                if(jugador != null){
+                    Pausa();
+                }
             }
         }
     }

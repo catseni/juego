@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638089166799810691
-    m_Hash: 648718890
+      ticks: 638091879133080115
+    m_Hash: 2574332521
   m_LockFileStatus:
     m_FilePath: E:/SODVI/juego/Proyecto_Cool/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638089166800430719
-    m_Hash: 3185344470
+      ticks: 638091879133670134
+    m_Hash: 696083219
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -699,12 +699,12 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 1.0.0
     nextVersion: 
-- packageId: com.unity.cinemachine@2.9.2
+- packageId: com.unity.cinemachine@2.8.9
   testable: 0
   isDirectDependency: 1
-  version: 2.9.2
+  version: 2.8.9
   source: 1
-  resolvedPath: E:\SODVI\juego\Proyecto_Cool\Library\PackageCache\com.unity.cinemachine@2.9.2
+  resolvedPath: E:\SODVI\juego\Proyecto_Cool\Library\PackageCache\com.unity.cinemachine@2.8.9
   assetPath: Packages/com.unity.cinemachine
   name: com.unity.cinemachine
   displayName: Cinemachine
@@ -840,13 +840,13 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 0
   isAssetStorePackage: 0
-  datePublishedTicks: 638019527120000000
+  datePublishedTicks: 637975495930000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
     url: https://github.com/Unity-Technologies/com.unity.cinemachine.git
-    revision: 2cf333415b8b110b132992a53dbb9e64e0436b89
+    revision: 92bcde243d623d77c64960a552f29396770af1e1
     path: 
   unityLifecycle:
     version: 2.8.9

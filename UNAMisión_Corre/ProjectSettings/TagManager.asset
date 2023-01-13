@@ -42,9 +42,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Fondo
+    uniqueID: 2058913829
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Fondo
-    uniqueID: 2058913829
+  - name: Personaje
+    uniqueID: 1632507383
+    locked: 0
+  - name: Obstaculo
+    uniqueID: 3054280825
+    locked: 0
+  - name: Plataforma
+    uniqueID: 3691248341
     locked: 0

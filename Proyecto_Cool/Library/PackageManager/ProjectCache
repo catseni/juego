@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638079013553208260
-    m_Hash: 1669668880
+      ticks: 638091879133080115
+    m_Hash: 2574332521
   m_LockFileStatus:
     m_FilePath: E:/SODVI/juego/Proyecto_Cool/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638079013924669872
-    m_Hash: 732237053
+      ticks: 638091879133670134
+    m_Hash: 696083219
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -283,12 +283,12 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 5.0.3
     nextVersion: 
-- packageId: com.unity.2d.psdimporter@6.0.6
+- packageId: com.unity.2d.psdimporter@6.0.7
   testable: 0
   isDirectDependency: 1
-  version: 6.0.6
+  version: 6.0.7
   source: 1
-  resolvedPath: E:\SODVI\juego\Proyecto_Cool\Library\PackageCache\com.unity.2d.psdimporter@6.0.6
+  resolvedPath: E:\SODVI\juego\Proyecto_Cool\Library\PackageCache\com.unity.2d.psdimporter@6.0.7
   assetPath: Packages/com.unity.2d.psdimporter
   name: com.unity.2d.psdimporter
   displayName: 2D PSD Importer
@@ -381,9 +381,9 @@ m_ResolvedPackages:
     verified: 6.0.7
   dependencies:
   - name: com.unity.2d.animation
-    version: 7.0.8
+    version: 7.0.9
   - name: com.unity.2d.common
-    version: 6.0.5
+    version: 6.0.6
   - name: com.unity.2d.sprite
     version: 1.0.0
   resolvedDependencies:
@@ -423,13 +423,13 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 0
   isAssetStorePackage: 0
-  datePublishedTicks: 637989323240000000
-  documentationUrl: 
+  datePublishedTicks: 638067887380000000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.2d.psdimporter@6.0/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/2d.git
-    revision: d1ad42baef5a9bf44369c855eb89f86d6cd3c744
+    revision: 911204bb63dcf2da80b6063d54c4ec8737ad13dc
     path: 
   unityLifecycle:
     version: 6.0.6
@@ -699,12 +699,12 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 1.0.0
     nextVersion: 
-- packageId: com.unity.cinemachine@2.9.2
+- packageId: com.unity.cinemachine@2.8.9
   testable: 0
   isDirectDependency: 1
-  version: 2.9.2
+  version: 2.8.9
   source: 1
-  resolvedPath: E:\SODVI\juego\Proyecto_Cool\Library\PackageCache\com.unity.cinemachine@2.9.2
+  resolvedPath: E:\SODVI\juego\Proyecto_Cool\Library\PackageCache\com.unity.cinemachine@2.8.9
   assetPath: Packages/com.unity.cinemachine
   name: com.unity.cinemachine
   displayName: Cinemachine
@@ -800,7 +800,7 @@ m_ResolvedPackages:
     version: 1.1.31
   resolvedDependencies:
   - name: com.unity.test-framework
-    version: 1.1.31
+    version: 1.1.33
   - name: com.unity.ext.nunit
     version: 1.0.6
   - name: com.unity.modules.imgui
@@ -840,13 +840,13 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 0
   isAssetStorePackage: 0
-  datePublishedTicks: 638019527120000000
+  datePublishedTicks: 637975495930000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
     url: https://github.com/Unity-Technologies/com.unity.cinemachine.git
-    revision: 2cf333415b8b110b132992a53dbb9e64e0436b89
+    revision: 92bcde243d623d77c64960a552f29396770af1e1
     path: 
   unityLifecycle:
     version: 2.8.9
@@ -996,12 +996,12 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 1.17.7
     nextVersion: 
-- packageId: com.unity.ide.rider@3.0.16
+- packageId: com.unity.ide.rider@3.0.18
   testable: 0
   isDirectDependency: 1
-  version: 3.0.16
+  version: 3.0.18
   source: 1
-  resolvedPath: E:\SODVI\juego\Proyecto_Cool\Library\PackageCache\com.unity.ide.rider@3.0.16
+  resolvedPath: E:\SODVI\juego\Proyecto_Cool\Library\PackageCache\com.unity.ide.rider@3.0.18
   assetPath: Packages/com.unity.ide.rider
   name: com.unity.ide.rider
   displayName: JetBrains Rider Editor
@@ -1051,10 +1051,12 @@ m_ResolvedPackages:
     - 3.0.15
     - 3.0.16
     - 3.0.17
+    - 3.0.18
     compatible:
     - 3.0.16
     - 3.0.17
-    verified: 3.0.17
+    - 3.0.18
+    verified: 3.0.18
   dependencies:
   - name: com.unity.ext.nunit
     version: 1.0.6
@@ -1072,23 +1074,23 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 0
   isAssetStorePackage: 0
-  datePublishedTicks: 638011833630000000
-  documentationUrl: 
+  datePublishedTicks: 638088746970000000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.ide.rider@3.0/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.rider.git
-    revision: 9b718d58b8f7a34e564f2c79af6d2ca788e929d4
+    revision: b40b39e6834c2915637f431d002d1f3dd8ec9ce5
     path: 
   unityLifecycle:
     version: 3.0.16
     nextVersion: 
-- packageId: com.unity.ide.visualstudio@2.0.16
+- packageId: com.unity.ide.visualstudio@2.0.17
   testable: 0
   isDirectDependency: 1
-  version: 2.0.16
+  version: 2.0.17
   source: 1
-  resolvedPath: E:\SODVI\juego\Proyecto_Cool\Library\PackageCache\com.unity.ide.visualstudio@2.0.16
+  resolvedPath: E:\SODVI\juego\Proyecto_Cool\Library\PackageCache\com.unity.ide.visualstudio@2.0.17
   assetPath: Packages/com.unity.ide.visualstudio
   name: com.unity.ide.visualstudio
   displayName: Visual Studio Editor
@@ -1134,7 +1136,7 @@ m_ResolvedPackages:
     version: 1.1.9
   resolvedDependencies:
   - name: com.unity.test-framework
-    version: 1.1.31
+    version: 1.1.33
   - name: com.unity.ext.nunit
     version: 1.0.6
   - name: com.unity.modules.imgui
@@ -1152,13 +1154,13 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 0
   isAssetStorePackage: 0
-  datePublishedTicks: 637914298680000000
-  documentationUrl: 
+  datePublishedTicks: 638059987360000000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.ide.visualstudio@2.0/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.visualstudio.git
-    revision: c01855ef6461b821ab0226135e96a4ee86de96be
+    revision: 1f126893bfb18ea9661fb15771613e841467073c
     path: 
   unityLifecycle:
     version: 2.0.16
@@ -1225,12 +1227,12 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 1.2.5
     nextVersion: 
-- packageId: com.unity.test-framework@1.1.31
+- packageId: com.unity.test-framework@1.1.33
   testable: 0
   isDirectDependency: 1
-  version: 1.1.31
+  version: 1.1.33
   source: 1
-  resolvedPath: E:\SODVI\juego\Proyecto_Cool\Library\PackageCache\com.unity.test-framework@1.1.31
+  resolvedPath: E:\SODVI\juego\Proyecto_Cool\Library\PackageCache\com.unity.test-framework@1.1.33
   assetPath: Packages/com.unity.test-framework
   name: com.unity.test-framework
   displayName: Test Framework
@@ -1324,13 +1326,13 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 0
   isAssetStorePackage: 0
-  datePublishedTicks: 637804266210000000
+  datePublishedTicks: 637938212700000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
     url: https://github.com/Unity-Technologies/com.unity.test-framework.git
-    revision: 438b0defc147c9be5c969ca79ff03a722b4590ed
+    revision: 34a4d423d64926635eb36d3bb86276179cc186e1
     path: 
   unityLifecycle:
     version: 1.1.31

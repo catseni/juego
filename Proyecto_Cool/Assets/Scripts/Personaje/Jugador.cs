@@ -24,8 +24,8 @@ public class Jugador : MonoBehaviour
     [SerializeField] private LayerMask Suelo;
     public AudioSource SonidoSalto;
 
-    private bool contactoSuelo;
-    private bool saltar;
+    public bool contactoSuelo;
+    public bool saltar;
 
     [Header("SaltoRegulado")]
     [Range(0, 1)][SerializeField] private float multiplicadorTerminarSalto;
@@ -34,16 +34,16 @@ public class Jugador : MonoBehaviour
     private bool botonSaltoArriba = true;
 
     [Header("Agarcharse")]
-    [SerializeField] private Transform controladorTecho;
+    [SerializeField] public Transform controladorTecho;
     [SerializeField] private float radioTecho;
     [SerializeField] private float multVelocidadAgachado;
     [SerializeField] private Collider2D colisionadorAgachado;
     public AudioSource SonidoAgachado;
-    private bool agachado = false;
-    private bool agachar = false;
+    public bool agachado = false;
+    public bool agachar = false;
     
     [Header("Animacion")]
-    private Animator animador;
+    public Animator animador;
 
     public event EventHandler FinJuego;
 
@@ -51,6 +51,7 @@ public class Jugador : MonoBehaviour
     [SerializeField] public bool PowerUp = false;
     public AudioSource SonidoPW;
     public AudioSource MusicaPW;
+    public AudioSource Destuccion;
 
     public float timer;
     public float inicioPW, finPW;
@@ -179,7 +180,7 @@ public class Jugador : MonoBehaviour
         SonidoPW.Play();
         MusicaPW.Play();
         inicioPW = timer;
-        finPW = timer + 7;
+        finPW = timer + 10;
         contadorPW = true;
         PowerUp = true;
     }
@@ -199,6 +200,8 @@ public class Jugador : MonoBehaviour
                 MusicaFondo.Stop();
                 FinJuego?.Invoke(this, EventArgs.Empty);
                 GameObject.Destroy(this.gameObject);
+            }else{
+                Destuccion.Play();
             }
         }
     }

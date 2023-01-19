@@ -15,7 +15,7 @@ TagManager:
   - Suelo
   - Water
   - UI
-  - 
+  - Fondo
   - 
   - 
   - 
@@ -42,11 +42,11 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Fondo
     uniqueID: 3567886283
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: Personaje
     uniqueID: 1653168605

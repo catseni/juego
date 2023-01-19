@@ -7,6 +7,6 @@ public class Contador : MonoBehaviour
 {
     void Start()
     {
-        Destroy(this.gameObject, 8f);
+        Destroy(this.gameObject, 7.66f);
     }
 }

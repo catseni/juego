@@ -14,12 +14,13 @@ public class ControladorNivel : MonoBehaviour
     [SerializeField] private int cantidadInicial;
     [SerializeField] private GameObject menuGaOv;
     public AudioSource PlayerDestroy;
+    public AudioSource MusicaGameOver;
     private Transform jugador;
     public Text TextoDeJuego;
     public bool Perdiste;
     public int numAleatorio = 0;
     public int numAleatorioPW = 0;
-    public int probabilidadPW = 5;
+    public int probabilidadPW = 7;
     //public event EventHandler FinJuego;
 
     public bool Inicio = true;
@@ -88,6 +89,11 @@ public class ControladorNivel : MonoBehaviour
                     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 }
             }
+        }
+
+        if(Perdiste == true && PlayerDestroy.isPlaying)
+        {
+            MusicaGameOver.Play();
         }
     }
 
